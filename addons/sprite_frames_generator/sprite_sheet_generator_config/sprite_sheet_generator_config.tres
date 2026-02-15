@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="SpriteSheetGeneratorConfig" load_steps=21 format=3 uid="uid://cp6ylmqh8a12"]
+
+[ext_resource type="SpriteFrames" uid="uid://dcqo6qujjhu4r" path="res://animation/regular_universal.tres" id="1_xre6t"]
+[ext_resource type="Script" uid="uid://lhjwx6on360b" path="res://addons/sprite_frames_generator/sprite_sheet_generator_config/sprite_sheet_generator_config.gd" id="2_swoar"]
+[ext_resource type="Script" uid="uid://day2vxmnlqaxp" path="res://addons/sprite_frames_generator/sprite_sheet_generator_config/sprite_sheet_entry.gd" id="3_6y45l"]
+[ext_resource type="Texture2D" uid="uid://2abuq8yfupbx" path="res://images/LPC Characters/bro_universal.png" id="4_x381k"]
+[ext_resource type="Texture2D" uid="uid://bvpkadx8ubua7" path="res://images/LPC Characters/child_universal.png" id="5_8pawv"]
+[ext_resource type="Texture2D" uid="uid://rdbvvgepxv34" path="res://images/LPC Characters/cosplayer_universal.png" id="6_p3rqx"]
+[ext_resource type="Texture2D" uid="uid://cov6x4n8j4vvt" path="res://images/LPC Characters/father_universal.png" id="7_xd0ju"]
+[ext_resource type="Texture2D" uid="uid://bisy0bbv32e1v" path="res://images/LPC Characters/femboy_universal.png" id="8_wf7xo"]
+[ext_resource type="Texture2D" uid="uid://cdube3506wuc" path="res://images/LPC Characters/germaphobe_universal.png" id="9_i6ftc"]
+[ext_resource type="Texture2D" uid="uid://dosohff3hikcv" path="res://images/LPC Characters/highclass_universal.png" id="10_kdol3"]
+[ext_resource type="Texture2D" uid="uid://bs4w32nui6rqw" path="res://images/LPC Characters/oldman_universal.png" id="11_0bxel"]
+
+[sub_resource type="Resource" id="Resource_1tqve"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("4_x381k")
+file_name = "bro_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_gs1ui"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("5_8pawv")
+file_name = "child_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_xh423"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("6_p3rqx")
+file_name = "cosplayer_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_34cmw"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("6_p3rqx")
+file_name = "cosplayer_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_rrnqk"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("7_xd0ju")
+file_name = "father_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_hmhh2"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("8_wf7xo")
+file_name = "femboy_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_ek60k"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("9_i6ftc")
+file_name = "germaphobe_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_v588k"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("10_kdol3")
+file_name = "highclass_universal.tres"
+naming_convention = 0
+
+[sub_resource type="Resource" id="Resource_cvqrr"]
+script = ExtResource("3_6y45l")
+texture = ExtResource("11_0bxel")
+file_name = "oldman_universal.tres"
+naming_convention = 0
+
+[resource]
+script = ExtResource("2_swoar")
+base_sprite_frames = ExtResource("1_xre6t")
+scan_from_directory = false
+directory = "res://scenes/characters/player/assets/Player/Legs/Farmer_Pants/"
+file_extensions = Array[String](["png", "jpg", "jpeg"])
+naming_convention = 0
+sprite_sheets = Array[ExtResource("3_6y45l")]([SubResource("Resource_1tqve"), SubResource("Resource_gs1ui"), SubResource("Resource_xh423"), SubResource("Resource_34cmw"), SubResource("Resource_rrnqk"), SubResource("Resource_hmhh2"), SubResource("Resource_ek60k"), SubResource("Resource_v588k"), SubResource("Resource_cvqrr")])
+animations_names = Array[String](["idle", "walk_right", "walk_up"])
+output_directory = "res://animation/"
+metadata/_custom_type_script = "uid://lhjwx6on360b"

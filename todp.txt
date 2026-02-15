@@ -1,0 +1,9 @@
+x - Setup score.
+x - top score
+x -  settings page
+
+better door sound
+X - fix cosplayer sprite.
+fix the algorithm for detecting errors.
+make a better random puzzle algorithm
+make main menu

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pd53h1e5o1vn"]
+
+[ext_resource type="Script" uid="uid://dx64vgwn6rjvf" path="res://scripts/helper/simplerunner.gd" id="1_jy0km"]
+
+[node name="Simplerunner" type="Node2D"]
+script = ExtResource("1_jy0km")

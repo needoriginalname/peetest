@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="RuleEntryResourceType" load_steps=6 format=3 uid="uid://cm52hek3ltg7"]
+
+[ext_resource type="Texture2D" uid="uid://rdbvvgepxv34" path="res://images/LPC Characters/cosplayer_universal.png" id="1_igfy5"]
+[ext_resource type="Script" uid="uid://ce86mkbuy0ecg" path="res://scripts/character_types/rule_entry_resource_type.gd" id="1_p3crq"]
+[ext_resource type="SpriteFrames" uid="uid://bgdo3c3mqv5c5" path="res://animation/cosplayer_universal.tres" id="3_dm7qw"]
+[ext_resource type="Texture2D" uid="uid://be1w4aqbqnwhx" path="res://images/texture_atlas/cosplayer_full.tres" id="3_igfy5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm7qw"]
+atlas = ExtResource("1_igfy5")
+region = Rect2(16, 8, 32, 56)
+
+[resource]
+script = ExtResource("1_p3crq")
+thumbnail = ExtResource("3_igfy5")
+book_entry = SubResource("AtlasTexture_dm7qw")
+spritesheet = ExtResource("3_dm7qw")
+name = "Pirate Cosplay"
+rule_description = "The pirate Cosplayer has a real hook, do not stand to his left."
+is_character = true

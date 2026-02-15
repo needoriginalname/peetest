@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://u7g3a15xwopy"]
+
+[ext_resource type="Texture2D" uid="uid://bisy0bbv32e1v" path="res://images/LPC Characters/femboy_universal.png" id="1_fi850"]
+
+[resource]
+atlas = ExtResource("1_fi850")
+region = Rect2(16, 12, 32, 32)

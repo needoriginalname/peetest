@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://4e85a5adadv"]
+
+[ext_resource type="FontFile" uid="uid://cq6knfjc4yt3w" path="res://font/Nunito-ExtraBold.ttf" id="1_235fq"]
+
+[resource]
+font = ExtResource("1_235fq")
+font_size = 45
+font_color = Color(0, 0, 0, 1)

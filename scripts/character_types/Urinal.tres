@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RuleEntryResourceType" load_steps=3 format=3 uid="uid://bvmxwbnscqyql"]
+
+[ext_resource type="Texture2D" uid="uid://b420uul3untyw" path="res://images/texture_atlas/urinal.tres" id="1_0nsg1"]
+[ext_resource type="Script" uid="uid://ce86mkbuy0ecg" path="res://scripts/character_types/rule_entry_resource_type.gd" id="2_gmdvy"]
+
+[resource]
+script = ExtResource("2_gmdvy")
+thumbnail = ExtResource("1_0nsg1")
+book_entry = ExtResource("1_0nsg1")
+name = "Urinal"
+rule_description = "You may only use a urinal that is unused."
+is_character = null

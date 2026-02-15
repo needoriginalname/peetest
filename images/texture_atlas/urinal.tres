@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b420uul3untyw"]
+
+[ext_resource type="Texture2D" uid="uid://dpbu0c60dfl0f" path="res://images/Toliet images/Toilet Spritesheet 1.png" id="1_yompb"]
+
+[resource]
+atlas = ExtResource("1_yompb")
+region = Rect2(720, 336, 176, 240)

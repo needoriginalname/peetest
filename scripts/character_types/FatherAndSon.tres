@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="RuleEntryResourceType" load_steps=6 format=3 uid="uid://cum4mj446k4ps"]
+
+[ext_resource type="Texture2D" uid="uid://cogjngre8ircj" path="res://images/texture_atlas/father_and_son_full_icon.tres" id="1_visoh"]
+[ext_resource type="Script" uid="uid://ce86mkbuy0ecg" path="res://scripts/character_types/rule_entry_resource_type.gd" id="2_visoh"]
+[ext_resource type="SpriteFrames" uid="uid://dhcxu52untt74" path="res://animation/father_universal.tres" id="3_4thqd"]
+[ext_resource type="Texture2D" uid="uid://cy7016212rcds" path="res://images/texture_atlas/father_and_son_icon.tres" id="3_bb2cm"]
+[ext_resource type="SpriteFrames" uid="uid://brfx7usaq1586" path="res://animation/child_universal.tres" id="4_y8csl"]
+
+[resource]
+script = ExtResource("2_visoh")
+thumbnail = ExtResource("3_bb2cm")
+book_entry = ExtResource("1_visoh")
+spritesheet = ExtResource("3_4thqd")
+spritesheet2 = ExtResource("4_y8csl")
+name = "Father and son"
+rule_description = "The Father is very protective of his son, Do not use any urinal between them"
+is_character = true

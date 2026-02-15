@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RuleEntryResourceType" load_steps=3 format=3 uid="uid://b88cxt6ppuicm"]
+
+[ext_resource type="Texture2D" uid="uid://xd0sk31rgiyo" path="res://images/brokensign.png" id="1_e6umm"]
+[ext_resource type="Script" uid="uid://ce86mkbuy0ecg" path="res://scripts/character_types/rule_entry_resource_type.gd" id="2_p56ak"]
+
+[resource]
+script = ExtResource("2_p56ak")
+thumbnail = ExtResource("1_e6umm")
+name = "Broken Sign"
+rule_description = "You can not use urinals that are out of service."
+is_character = false

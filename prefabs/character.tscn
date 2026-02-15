@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://dy5t8v4r5b2lt"]
+
+[ext_resource type="Script" uid="uid://c5ubl6yw11wb1" path="res://character.gd" id="1_xofgc"]
+[ext_resource type="SpriteFrames" uid="uid://dcqo6qujjhu4r" path="res://animation/regular_universal.tres" id="2_xofgc"]
+[ext_resource type="Texture2D" uid="uid://ccow18om8j0qi" path="res://images/emote icons/Spritesheets/vector_style2.png" id="3_v5mhf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk8gb"]
+atlas = ExtResource("3_v5mhf")
+region = Rect2(160, 76, 32, 38)
+
+[sub_resource type="Animation" id="Animation_xb6wn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -144)]
+}
+
+[sub_resource type="Animation" id="Animation_v2nwo"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6ca2f"]
+resource_name = "play_anger"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -144), Vector2(0, -128), Vector2(0, -144), Vector2(0, -160), Vector2(0, -144)]
+}
+
+[sub_resource type="Animation" id="Animation_yqljb"]
+resource_name = "play_anger_child"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -94), Vector2(0, -78), Vector2(0, -94), Vector2(0, -110), Vector2(0, -94)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g600d"]
+_data = {
+&"RESET": SubResource("Animation_xb6wn"),
+&"default": SubResource("Animation_v2nwo"),
+&"play_anger": SubResource("Animation_6ca2f"),
+&"play_anger_child": SubResource("Animation_yqljb")
+}
+
+[node name="Character" type="Node2D" groups=["character"]]
+z_index = 1
+script = ExtResource("1_xofgc")
+frames = ExtResource("2_xofgc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("2_xofgc")
+animation = &"walk_left"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -144)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_hk8gb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g600d")
+}

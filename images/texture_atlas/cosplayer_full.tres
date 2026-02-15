@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://be1w4aqbqnwhx"]
+
+[ext_resource type="Texture2D" uid="uid://rdbvvgepxv34" path="res://images/LPC Characters/cosplayer_universal.png" id="1_464lx"]
+
+[resource]
+atlas = ExtResource("1_464lx")
+region = Rect2(16, 8, 32, 32)

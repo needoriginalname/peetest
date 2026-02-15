@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg3ris08pfuby"]
+
+[ext_resource type="Texture2D" uid="uid://cklkawgcpoflw" path="res://images/texture_atlas/Seperator.tres" id="1_5wn2s"]
+
+[node name="Seperator" type="PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5wn2s")

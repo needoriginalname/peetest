@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="RuleEntryResourceType" load_steps=6 format=3 uid="uid://dm2c6ac0atbke"]
+
+[ext_resource type="Texture2D" uid="uid://dj4dqlerhg7p3" path="res://images/LPC Characters/regular_universal.png" id="1_wo10t"]
+[ext_resource type="Script" uid="uid://ce86mkbuy0ecg" path="res://scripts/character_types/rule_entry_resource_type.gd" id="2_wo10t"]
+[ext_resource type="SpriteFrames" uid="uid://dcqo6qujjhu4r" path="res://animation/regular_universal.tres" id="3_a7jc4"]
+[ext_resource type="Texture2D" uid="uid://cn3vhh4560vns" path="res://images/texture_atlas/regular_guy_icon.tres" id="3_wo10t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7jc4"]
+atlas = ExtResource("1_wo10t")
+region = Rect2(16, 8, 32, 56)
+
+[resource]
+script = ExtResource("2_wo10t")
+thumbnail = ExtResource("3_wo10t")
+book_entry = SubResource("AtlasTexture_a7jc4")
+spritesheet = ExtResource("3_a7jc4")
+name = "Regular Guy"
+rule_description = "Just a regular Joe Smo, if possible don't pick a urinal next to him."
+is_character = true

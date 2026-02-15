@@ -1,0 +1,787 @@
+[gd_scene load_steps=52 format=4 uid="uid://bg5h0anwgdm4s"]
+
+[ext_resource type="Script" uid="uid://4bhviy87edyh" path="res://scripts/GameController.gd" id="1_norob"]
+[ext_resource type="PackedScene" uid="uid://bg3ris08pfuby" path="res://prefabs/seperator.tscn" id="3_j7yda"]
+[ext_resource type="PackedScene" uid="uid://dj4ja25apo1mx" path="res://prefabs/toliet.tscn" id="3_yla3h"]
+[ext_resource type="TileSet" uid="uid://ducdboyrilhwe" path="res://images/wall/bathroom_wall.tres" id="4_oivf4"]
+[ext_resource type="Theme" uid="uid://cmvi5035lijxk" path="res://gui/Game_Gui.tres" id="6_6ub7n"]
+[ext_resource type="LabelSettings" uid="uid://ca8lbuxfwwvkf" path="res://gui/hub_label_score.tres" id="6_lxtpa"]
+[ext_resource type="Script" uid="uid://c487g3oxtgg70" path="res://gui/scripts/gameguicontroller.gd" id="7_6mti6"]
+[ext_resource type="Script" uid="uid://cbjx4ibxvu6n" path="res://scripts/scores.gd" id="7_v3iuf"]
+[ext_resource type="Script" uid="uid://knwidmj45r0l" path="res://rule_panel.gd" id="8_6mti6"]
+[ext_resource type="Texture2D" uid="uid://b3nnwlqy5ith1" path="res://images/Book_sprite.png" id="8_v1o7k"]
+[ext_resource type="Script" uid="uid://ce86mkbuy0ecg" path="res://scripts/character_types/rule_entry_resource_type.gd" id="9_ludt0"]
+[ext_resource type="Texture2D" uid="uid://ck1axfw8t4qxt" path="res://images/settings-1630709.svg" id="9_yt7gt"]
+[ext_resource type="Texture2D" uid="uid://cn3vhh4560vns" path="res://images/texture_atlas/regular_guy_icon.tres" id="10_o17u5"]
+[ext_resource type="Resource" uid="uid://bvmxwbnscqyql" path="res://scripts/character_types/Urinal.tres" id="10_wxa0m"]
+[ext_resource type="Theme" uid="uid://bexg0f6lf0tf3" path="res://gui/main_theme.tres" id="11_4cps6"]
+[ext_resource type="Texture2D" uid="uid://u7g3a15xwopy" path="res://images/texture_atlas/femboy_icon.tres" id="11_u10x5"]
+[ext_resource type="Resource" uid="uid://dm2c6ac0atbke" path="res://scripts/character_types/RegularGuy.tres" id="11_v1o7k"]
+[ext_resource type="Resource" uid="uid://23uvxwmgpggi" path="res://scripts/character_types/Femboy.tres" id="12_e14us"]
+[ext_resource type="Resource" uid="uid://s0rhp8djywi6" path="res://scripts/character_types/TheBro.tres" id="13_prei6"]
+[ext_resource type="Resource" uid="uid://dv4hn7v15vth8" path="res://scripts/character_types/OldMan.tres" id="14_oivf4"]
+[ext_resource type="Resource" uid="uid://cum4mj446k4ps" path="res://scripts/character_types/FatherAndSon.tres" id="15_7x8mr"]
+[ext_resource type="Resource" uid="uid://cm52hek3ltg7" path="res://scripts/character_types/Cosplayer.tres" id="16_pixp0"]
+[ext_resource type="Resource" uid="uid://ctpkgvr3x62h4" path="res://scripts/character_types/HighClass.tres" id="17_rab0f"]
+[ext_resource type="Resource" uid="uid://ujtxt0nbtiv6" path="res://scripts/character_types/Germaphobe.tres" id="18_rbg2f"]
+[ext_resource type="Resource" uid="uid://b88cxt6ppuicm" path="res://scripts/character_types/Broken.tres" id="19_6ub7n"]
+[ext_resource type="ButtonGroup" uid="uid://b06atv5lgcnfj" path="res://scripts/rule_entry_group.tres" id="20_v3iuf"]
+[ext_resource type="Texture2D" uid="uid://b420uul3untyw" path="res://images/texture_atlas/urinal.tres" id="22_e14us"]
+[ext_resource type="Texture2D" uid="uid://bhhxp0bqo31rb" path="res://images/texture_atlas/bro_icon.tres" id="24_hhq5r"]
+[ext_resource type="StyleBox" uid="uid://dkit8sbwjl2b7" path="res://gui/assets/ButtonStyleBox.tres" id="24_q3dw4"]
+[ext_resource type="Texture2D" uid="uid://dm3ojdd246ek0" path="res://images/texture_atlas/old_man_icon.tres" id="25_yt7gt"]
+[ext_resource type="Texture2D" uid="uid://cy7016212rcds" path="res://images/texture_atlas/father_and_son_icon.tres" id="27_oivf4"]
+[ext_resource type="Texture2D" uid="uid://c7vvdst6dtcyd" path="res://images/texture_atlas/cosplayer_icon.tres" id="27_wmnq4"]
+[ext_resource type="Texture2D" uid="uid://35p63aw10wpw" path="res://images/texture_atlas/high_class_icon.tres" id="28_q3dw4"]
+[ext_resource type="Texture2D" uid="uid://b0ukt4jjs7ib8" path="res://images/texture_atlas/germ_icon.tres" id="29_h5wff"]
+[ext_resource type="Texture2D" uid="uid://l8a8w7d22cqk" path="res://images/Toliet images/broken.png" id="30_prei6"]
+[ext_resource type="LabelSettings" uid="uid://4e85a5adadv" path="res://gui/rule_entry_title.tres" id="31_ludt0"]
+[ext_resource type="Script" uid="uid://bxbs7axyu42me" path="res://toliet_holder.gd" id="32_e14us"]
+[ext_resource type="Script" uid="uid://be6lapa2pg7nt" path="res://gui/scripts/transition_layer.gd" id="33_v1o7k"]
+[ext_resource type="Script" uid="uid://yw5l00xwxwvk" path="res://scripts/character_spawner.gd" id="34_e14us"]
+[ext_resource type="PackedScene" uid="uid://82ptej7xfg8x" path="res://gui/settings_panel.tscn" id="34_hhq5r"]
+[ext_resource type="Script" uid="uid://cl5sdh4328hh3" path="res://door_2_location.gd" id="35_prei6"]
+[ext_resource type="LabelSettings" uid="uid://455cx4ggnraw" path="res://gui/rule_description.tres" id="36_wmnq4"]
+[ext_resource type="AudioStream" uid="uid://cgk8ychrvyvbg" path="res://audio/sfx/door-opening.mp3" id="37_rbg2f"]
+[ext_resource type="AudioStream" uid="uid://xlqxxvmajcxw" path="res://audio/sfx/disapproving.mp3" id="38_6ub7n"]
+[ext_resource type="AudioStream" uid="uid://fb484u5j6b1d" path="res://audio/sfx/success.mp3" id="39_v3iuf"]
+[ext_resource type="AudioStream" uid="uid://u3ta0mgbml6i" path="res://audio/sfx/water-drop.mp3" id="40_hhq5r"]
+[ext_resource type="Script" uid="uid://d2kwjkprvajg1" path="res://scripts/pop_up_controller.gd" id="42_v3iuf"]
+
+[sub_resource type="Animation" id="Animation_aybt7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RulePanel:pivot_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oymjd"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RulePanel:pivot_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_viusa"]
+_data = {
+&"RESET": SubResource("Animation_aybt7"),
+&"new_animation": SubResource("Animation_oymjd")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_wxa0m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -600, 5, 0, 0, 0, 0, 700.065, 0)
+}
+point_count = 2
+
+[node name="GameController" type="Node2D"]
+script = ExtResource("1_norob")
+urinal_prefab = ExtResource("3_yla3h")
+seperator_prefab = ExtResource("3_j7yda")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+layer = 128
+script = ExtResource("33_v1o7k")
+
+[node name="Overlay" type="ColorRect" parent="TransitionLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="HUD Layer" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+
+[node name="TopBarTop" type="VBoxContainer" parent="HUD Layer"]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme = ExtResource("6_6ub7n")
+script = ExtResource("7_6mti6")
+
+[node name="TopBar" type="MarginContainer" parent="HUD Layer/TopBarTop"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Scores" type="VBoxContainer" parent="HUD Layer/TopBarTop/TopBar"]
+layout_mode = 2
+script = ExtResource("7_v3iuf")
+
+[node name="Current" type="HBoxContainer" parent="HUD Layer/TopBarTop/TopBar/Scores"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/TopBarTop/TopBar/Scores/Current"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="HUD Layer/TopBarTop/TopBar/Scores/Current/MarginContainer"]
+layout_mode = 2
+text = "Score: "
+label_settings = ExtResource("6_lxtpa")
+
+[node name="LevelScore" type="Label" parent="HUD Layer/TopBarTop/TopBar/Scores/Current"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "234"
+label_settings = ExtResource("6_lxtpa")
+horizontal_alignment = 2
+
+[node name="Top" type="HBoxContainer" parent="HUD Layer/TopBarTop/TopBar/Scores"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/TopBarTop/TopBar/Scores/Top"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="HUD Layer/TopBarTop/TopBar/Scores/Top/MarginContainer"]
+layout_mode = 2
+text = "Top Score: "
+label_settings = ExtResource("6_lxtpa")
+
+[node name="LevelTopScore" type="Label" parent="HUD Layer/TopBarTop/TopBar/Scores/Top"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "234"
+label_settings = ExtResource("6_lxtpa")
+horizontal_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD Layer/TopBarTop/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+alignment = 2
+
+[node name="SettingsButton" type="TextureButton" parent="HUD Layer/TopBarTop/TopBar/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("9_yt7gt")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="BookButton" type="TextureButton" parent="HUD Layer/TopBarTop/TopBar/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = ExtResource("8_v1o7k")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TimerContainer" type="CenterContainer" parent="HUD Layer/TopBarTop/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TimerDisplay" type="Label" parent="HUD Layer/TopBarTop/TopBar/TimerContainer"]
+layout_mode = 2
+text = "60"
+label_settings = ExtResource("6_lxtpa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD Layer/TopBarTop"]
+libraries = {
+&"": SubResource("AnimationLibrary_viusa")
+}
+
+[node name="RulePanel" type="VBoxContainer" parent="HUD Layer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 208.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("11_4cps6")
+script = ExtResource("8_6mti6")
+rule_entry_map = Array[ExtResource("9_ludt0")]([ExtResource("10_wxa0m"), ExtResource("11_v1o7k"), ExtResource("12_e14us"), ExtResource("13_prei6"), ExtResource("14_oivf4"), ExtResource("15_7x8mr"), ExtResource("16_pixp0"), ExtResource("17_rab0f"), ExtResource("18_rbg2f"), ExtResource("19_6ub7n")])
+
+[node name="RuleList" type="MarginContainer" parent="HUD Layer/RulePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="HUD Layer/RulePanel/RuleList"]
+layout_mode = 2
+
+[node name="ButtonContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("22_e14us")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer2" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer2"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer2/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton2" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer2/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("10_o17u5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer3" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer3"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer3/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton3" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer3/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("11_u10x5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer4" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer4"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer4"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer4/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton4" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer4/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("24_hhq5r")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer5" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer5"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer5"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer5/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton5" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer5/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("25_yt7gt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer6" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer6"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer6"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer6/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton6" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer6/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("27_oivf4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer7" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer7"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer7"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer7/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton7" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer7/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("27_wmnq4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer8" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer8"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer8"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer8/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton8" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer8/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("28_q3dw4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer9" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer9"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer9"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer9/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton9" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer9/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("29_h5wff")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonContainer10" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer10"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24_q3dw4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer10"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer10/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton10" type="TextureButton" parent="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer10/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = ExtResource("20_v3iuf")
+texture_normal = ExtResource("30_prei6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RuleEntry" type="PanelContainer" parent="HUD Layer/RulePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("11_4cps6")
+
+[node name="GridContainer" type="GridContainer" parent="HUD Layer/RulePanel/RuleEntry"]
+layout_mode = 2
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD Layer/RulePanel/RuleEntry/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD Layer/RulePanel/RuleEntry/GridContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RuleEntryLargePicture" type="TextureRect" parent="HUD Layer/RulePanel/RuleEntry/GridContainer/MarginContainer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(165, 330)
+layout_mode = 2
+texture = ExtResource("22_e14us")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="HUD Layer/RulePanel/RuleEntry/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD Layer/RulePanel/RuleEntry/GridContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="RuleNameLabel" type="Label" parent="HUD Layer/RulePanel/RuleEntry/GridContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Rule Name"
+label_settings = ExtResource("31_ludt0")
+
+[node name="RuleDescriptionLabel" type="Label" parent="HUD Layer/RulePanel/RuleEntry/GridContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 5)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Rule Description"
+label_settings = ExtResource("36_wmnq4")
+autowrap_mode = 3
+
+[node name="SettingsPanel" parent="HUD Layer" instance=ExtResource("34_hhq5r")]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -221.0
+offset_right = 277.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADw//f/AQAWAA4AAADx//f/AQAXAA4AAADy//f/AQAXAA4AAADz//f/AQAXAA4AAAD0//f/AQAXAA4AAAD1//f/AQAXAA4AAAD2//f/AQAXAA4AAAD3//f/AQAXAA4AAAD4//f/AQAXAA4AAAD5//f/AQAXAA4AAAD6//f/AQAXAA4AAAD7//f/AQAXAA4AAAD8//f/AQAXAA4AAAD9//f/AQAXAA4AAAD+//f/AQAXAA4AAAD///f/AQAXAA4AAAAAAPf/AQAXAA4AAAABAPf/AQAXAA4AAAACAPf/AQAXAA4AAAADAPf/AQAXAA4AAAAEAPf/AQAXAA4AAAAFAPf/AQAXAA4AAAAGAPf/AQAXAA4AAAAHAPf/AQAXAA4AAAAIAPf/AQAXAA4AAAAJAPf/AQAXAA4AAAAKAPf/AQAXAA4AAAALAPf/AQAXAA4AAAAMAPf/AQAXAA4AAAANAPf/AQAXAA4AAAAOAPf/AQAXAA4AAAAPAPf/AQAYAA4AAADw//j/AQAbAA4AAADw//n/AQAbAA4AAADw//r/AQAbAA4AAADw//v/AQAbAA4AAADw//z/AQAbAA4AAADw//3/AQAbAA4AAADw//7/AQAbAA4AAADw////AQAbAA4AAADw/wAAAQAbAA4AAADw/wEAAQAbAA4AAADw/wIAAQAbAA4AAADw/wMAAQAXAA8AAADw/wQAAQAXABAAAADx//j/AQAbAA4AAADx//n/AQAbAA4AAADx//r/AQAbAA4AAADx//v/AQAbAA4AAADx//z/AQAbAA4AAADx//3/AQAbAA4AAADx//7/AQAbAA4AAADx////AQAbAA4AAADx/wAAAQAbAA4AAADx/wEAAQAbAA4AAADx/wIAAQAbAA4AAADx/wMAAQAXAA8AAADx/wQAAQAXABAAAADy//j/AQAbAA4AAADy//n/AQAbAA4AAADy//r/AQAbAA4AAADy//v/AQAbAA4AAADy//z/AQAbAA4AAADy//3/AQAbAA4AAADy//7/AQAbAA4AAADy////AQAbAA4AAADy/wAAAQAbAA4AAADy/wEAAQAbAA4AAADy/wIAAQAbAA4AAADy/wMAAQAXAA8AAADy/wQAAQAXABAAAADz//j/AQAbAA4AAADz//n/AQAbAA4AAADz//r/AQAbAA4AAADz//v/AQAbAA4AAADz//z/AQAbAA4AAADz//3/AQAbAA4AAADz//7/AQAbAA4AAADz////AQAbAA4AAADz/wAAAQAbAA4AAADz/wEAAQAbAA4AAADz/wIAAQAbAA4AAADz/wMAAQAXAA8AAADz/wQAAQAXABAAAAD0//j/AQAbAA4AAAD0//n/AQAbAA4AAAD0//r/AQAbAA4AAAD0//v/AQAbAA4AAAD0//z/AQAbAA4AAAD0//3/AQAbAA4AAAD0//7/AQAbAA4AAAD0////AQAbAA4AAAD0/wAAAQAbAA4AAAD0/wEAAQAbAA4AAAD0/wIAAQAbAA4AAAD0/wMAAQAXAA8AAAD0/wQAAQAXABAAAAD1//j/AQAbAA4AAAD1//n/AQAbAA4AAAD1//r/AQAbAA4AAAD1//v/AQAbAA4AAAD1//z/AQAbAA4AAAD1//3/AQAbAA4AAAD1//7/AQAbAA4AAAD1////AQAbAA4AAAD1/wAAAQAbAA4AAAD1/wEAAQAbAA4AAAD1/wIAAQAbAA4AAAD1/wMAAQAXAA8AAAD1/wQAAQAXABAAAAD2//j/AQAbAA4AAAD2//n/AQAbAA4AAAD2//r/AQAbAA4AAAD2//v/AQAbAA4AAAD2//z/AQAbAA4AAAD2//3/AQAbAA4AAAD2//7/AQAbAA4AAAD2////AQAbAA4AAAD2/wAAAQAbAA4AAAD2/wEAAQAbAA4AAAD2/wIAAQAbAA4AAAD2/wMAAQAXAA8AAAD2/wQAAQAXABAAAAD3//j/AQAbAA4AAAD3//n/AQAbAA4AAAD3//r/AQAbAA4AAAD3//v/AQAbAA4AAAD3//z/AQAbAA4AAAD3//3/AQAbAA4AAAD3//7/AQAbAA4AAAD3////AQAbAA4AAAD3/wAAAQAbAA4AAAD3/wEAAQAbAA4AAAD3/wIAAQAbAA4AAAD3/wMAAQAXAA8AAAD3/wQAAQAXABAAAAD4//j/AQAbAA4AAAD4//n/AQAbAA4AAAD4//r/AQAbAA4AAAD4//v/AQAbAA4AAAD4//z/AQAbAA4AAAD4//3/AQAbAA4AAAD4//7/AQAbAA4AAAD4////AQAbAA4AAAD4/wAAAQAbAA4AAAD4/wEAAQAbAA4AAAD4/wIAAQAbAA4AAAD4/wMAAQAXAA8AAAD4/wQAAQAXABAAAAD5//j/AQAbAA4AAAD5//n/AQAbAA4AAAD5//r/AQAbAA4AAAD5//v/AQAbAA4AAAD5//z/AQAbAA4AAAD5//3/AQAbAA4AAAD5//7/AQAbAA4AAAD5////AQAbAA4AAAD5/wAAAQAbAA4AAAD5/wEAAQAbAA4AAAD5/wIAAQAbAA4AAAD5/wMAAQAXAA8AAAD5/wQAAQAXABAAAAD6//j/AQAbAA4AAAD6//n/AQAbAA4AAAD6//r/AQAbAA4AAAD6//v/AQAbAA4AAAD6//z/AQAbAA4AAAD6//3/AQAbAA4AAAD6//7/AQAbAA4AAAD6////AQAbAA4AAAD6/wAAAQAbAA4AAAD6/wEAAQAbAA4AAAD6/wIAAQAbAA4AAAD6/wMAAQAXAA8AAAD6/wQAAQAXABAAAAD7//j/AQAbAA4AAAD7//n/AQAbAA4AAAD7//r/AQAbAA4AAAD7//v/AQAbAA4AAAD7//z/AQAbAA4AAAD7//3/AQAbAA4AAAD7//7/AQAbAA4AAAD7////AQAbAA4AAAD7/wAAAQAbAA4AAAD7/wEAAQAbAA4AAAD7/wIAAQAbAA4AAAD7/wMAAQAXAA8AAAD7/wQAAQAXABAAAAD8//j/AQAbAA4AAAD8//n/AQAbAA4AAAD8//r/AQAbAA4AAAD8//v/AQAbAA4AAAD8//z/AQAbAA4AAAD8//3/AQAbAA4AAAD8//7/AQAbAA4AAAD8////AQAbAA4AAAD8/wAAAQAbAA4AAAD8/wEAAQAbAA4AAAD8/wIAAQAbAA4AAAD8/wMAAQAXAA8AAAD8/wQAAQAXABAAAAD9//j/AQAbAA4AAAD9//n/AQAbAA4AAAD9//r/AQAbAA4AAAD9//v/AQAbAA4AAAD9//z/AQAbAA4AAAD9//3/AQAbAA4AAAD9//7/AQAbAA4AAAD9////AQAbAA4AAAD9/wAAAQAbAA4AAAD9/wEAAQAbAA4AAAD9/wIAAQAbAA4AAAD9/wMAAQAXAA8AAAD9/wQAAQAXABAAAAD+//j/AQAbAA4AAAD+//n/AQAbAA4AAAD+//r/AQAbAA4AAAD+//v/AQAbAA4AAAD+//z/AQAbAA4AAAD+//3/AQAbAA4AAAD+//7/AQAbAA4AAAD+////AQAbAA4AAAD+/wAAAQAbAA4AAAD+/wEAAQAbAA4AAAD+/wIAAQAbAA4AAAD+/wMAAQAXAA8AAAD+/wQAAQAXABAAAAD///j/AQAbAA4AAAD///n/AQAbAA4AAAD///r/AQAbAA4AAAD///v/AQAbAA4AAAD///z/AQAbAA4AAAD///3/AQAbAA4AAAD///7/AQAbAA4AAAD/////AQAbAA4AAAD//wAAAQAbAA4AAAD//wEAAQAbAA4AAAD//wIAAQAbAA4AAAD//wMAAQAXAA8AAAD//wQAAQAXABAAAAAAAPj/AQAbAA4AAAAAAPn/AQAbAA4AAAAAAPr/AQAbAA4AAAAAAPv/AQAbAA4AAAAAAPz/AQAbAA4AAAAAAP3/AQAbAA4AAAAAAP7/AQAbAA4AAAAAAP//AQAbAA4AAAAAAAAAAQAbAA4AAAAAAAEAAQAbAA4AAAAAAAIAAQAbAA4AAAAAAAMAAQAXAA8AAAAAAAQAAQAXABAAAAABAPj/AQAbAA4AAAABAPn/AQAbAA4AAAABAPr/AQAbAA4AAAABAPv/AQAbAA4AAAABAPz/AQAbAA4AAAABAP3/AQAbAA4AAAABAP7/AQAbAA4AAAABAP//AQAbAA4AAAABAAAAAQAbAA4AAAABAAEAAQAbAA4AAAABAAIAAQAbAA4AAAABAAMAAQAXAA8AAAABAAQAAQAXABAAAAACAPj/AQAbAA4AAAACAPn/AQAbAA4AAAACAPr/AQAbAA4AAAACAPv/AQAbAA4AAAACAPz/AQAbAA4AAAACAP3/AQAbAA4AAAACAP7/AQAbAA4AAAACAP//AQAbAA4AAAACAAAAAQAbAA4AAAACAAEAAQAbAA4AAAACAAIAAQAbAA4AAAACAAMAAQAXAA8AAAACAAQAAQAXABAAAAADAPj/AQAbAA4AAAADAPn/AQAbAA4AAAADAPr/AQAbAA4AAAADAPv/AQAbAA4AAAADAPz/AQAbAA4AAAADAP3/AQAbAA4AAAADAP7/AQAbAA4AAAADAP//AQAbAA4AAAADAAAAAQAbAA4AAAADAAEAAQAbAA4AAAADAAIAAQAbAA4AAAADAAMAAQAXAA8AAAADAAQAAQAXABAAAAAEAPj/AQAbAA4AAAAEAPn/AQAbAA4AAAAEAPr/AQAbAA4AAAAEAPv/AQAbAA4AAAAEAPz/AQAbAA4AAAAEAP3/AQAbAA4AAAAEAP7/AQAbAA4AAAAEAP//AQAbAA4AAAAEAAAAAQAbAA4AAAAEAAEAAQAbAA4AAAAEAAIAAQAbAA4AAAAEAAMAAQAXAA8AAAAEAAQAAQAXABAAAAAFAPj/AQAbAA4AAAAFAPn/AQAbAA4AAAAFAPr/AQAbAA4AAAAFAPv/AQAbAA4AAAAFAPz/AQAbAA4AAAAFAP3/AQAbAA4AAAAFAP7/AQAbAA4AAAAFAP//AQAbAA4AAAAFAAAAAQAbAA4AAAAFAAEAAQAbAA4AAAAFAAIAAQAbAA4AAAAFAAMAAQAXAA8AAAAFAAQAAQAXABAAAAAGAPj/AQAbAA4AAAAGAPn/AQAbAA4AAAAGAPr/AQAbAA4AAAAGAPv/AQAbAA4AAAAGAPz/AQAbAA4AAAAGAP3/AQAbAA4AAAAGAP7/AQAbAA4AAAAGAP//AQAbAA4AAAAGAAAAAQAbAA4AAAAGAAEAAQAbAA4AAAAGAAIAAQAbAA4AAAAGAAMAAQAXAA8AAAAGAAQAAQAXABAAAAAHAPj/AQAbAA4AAAAHAPn/AQAbAA4AAAAHAPr/AQAbAA4AAAAHAPv/AQAbAA4AAAAHAPz/AQAbAA4AAAAHAP3/AQAbAA4AAAAHAP7/AQAbAA4AAAAHAP//AQAbAA4AAAAHAAAAAQAbAA4AAAAHAAEAAQAbAA4AAAAHAAIAAQAbAA4AAAAHAAMAAQAXAA8AAAAHAAQAAQAXABAAAAAIAPj/AQAbAA4AAAAIAPn/AQAbAA4AAAAIAPr/AQAbAA4AAAAIAPv/AQAbAA4AAAAIAPz/AQAbAA4AAAAIAP3/AQAbAA4AAAAIAP7/AQAbAA4AAAAIAP//AQAbAA4AAAAIAAAAAQAbAA4AAAAIAAEAAQAbAA4AAAAIAAIAAQAbAA4AAAAIAAMAAQAXAA8AAAAIAAQAAQAXABAAAAAJAPj/AQAbAA4AAAAJAPn/AQAbAA4AAAAJAPr/AQAbAA4AAAAJAPv/AQAbAA4AAAAJAPz/AQAbAA4AAAAJAP3/AQAbAA4AAAAJAP7/AQAbAA4AAAAJAP//AQAbAA4AAAAJAAAAAQAbAA4AAAAJAAEAAQAbAA4AAAAJAAIAAQAbAA4AAAAJAAMAAQAXAA8AAAAJAAQAAQAXABAAAAAKAPj/AQAbAA4AAAAKAPn/AQAbAA4AAAAKAPr/AQAbAA4AAAAKAPv/AQAbAA4AAAAKAPz/AQAbAA4AAAAKAP3/AQAbAA4AAAAKAP7/AQAbAA4AAAAKAP//AQAbAA4AAAAKAAAAAQAbAA4AAAAKAAEAAQAbAA4AAAAKAAIAAQAbAA4AAAAKAAMAAQAXAA8AAAAKAAQAAQAXABAAAAALAPj/AQAbAA4AAAALAPn/AQAbAA4AAAALAPr/AQAbAA4AAAALAPv/AQAbAA4AAAALAPz/AQAbAA4AAAALAP3/AQAbAA4AAAALAP7/AQAbAA4AAAALAP//AQAbAA4AAAALAAAAAQAbAA4AAAALAAEAAQAbAA4AAAALAAIAAQAbAA4AAAALAAMAAQAXAA8AAAALAAQAAQAXABAAAAAMAPj/AQAbAA4AAAAMAPn/AQAbAA4AAAAMAPr/AQAbAA4AAAAMAPv/AQAbAA4AAAAMAPz/AQAbAA4AAAAMAP3/AQAbAA4AAAAMAP7/AQAbAA4AAAAMAP//AQAbAA4AAAAMAAAAAQAbAA4AAAAMAAEAAQAbAA4AAAAMAAIAAQAbAA4AAAAMAAMAAQAXAA8AAAAMAAQAAQAXABAAAAANAPj/AQAbAA4AAAANAPn/AQAbAA4AAAANAPr/AQAbAA4AAAANAPv/AQAbAA4AAAANAPz/AQAbAA4AAAANAP3/AQAbAA4AAAANAP7/AQAbAA4AAAANAP//AQAbAA4AAAANAAAAAQAbAA4AAAANAAEAAQAbAA4AAAANAAIAAQAbAA4AAAANAAMAAQAXAA8AAAANAAQAAQAXABAAAAAOAPj/AQAbAA4AAAAOAPn/AQAbAA4AAAAOAPr/AQAbAA4AAAAOAPv/AQAbAA4AAAAOAPz/AQAbAA4AAAAOAP3/AQAbAA4AAAAOAP7/AQAbAA4AAAAOAP//AQAbAA4AAAAOAAAAAQAbAA4AAAAOAAEAAQAbAA4AAAAOAAIAAQAbAA4AAAAOAAMAAQAXAA8AAAAOAAQAAQAXABAAAAAPAPj/AQAbAA4AAAAPAPn/AQAbAA4AAAAPAPr/AQAbAA4AAAAPAPv/AQAbAA4AAAAPAPz/AQAbAA4AAAAPAP3/AQAbAA4AAAAPAP7/AQAbAA4AAAAPAP//AQAbAA4AAAAPAAAAAQAbAA4AAAAPAAEAAQAbAA4AAAAPAAIAAQAbAA4AAAAPAAMAAQAXAA8AAAAPAAQAAQAXABAAAADw/wUAAQAbABAAAADw/wYAAQAbABAAAADw/wcAAQAbABAAAADw/wgAAQAeABEAAADx/wUAAQAbABAAAADx/wYAAQAbABAAAADx/wcAAQAbABAAAADx/wgAAQAeABEAAADy/wUAAQAbABAAAADy/wYAAQAbABAAAADy/wcAAQAbABAAAADy/wgAAQAeABEAAADz/wUAAQAbABAAAADz/wYAAQAbABAAAADz/wcAAQAbABAAAADz/wgAAQAeABEAAAD0/wUAAQAbABAAAAD0/wYAAQAbABAAAAD0/wcAAQAbABAAAAD0/wgAAQAeABEAAAD1/wUAAQAbABAAAAD1/wYAAQAbABAAAAD1/wcAAQAbABAAAAD1/wgAAQAeABEAAAD2/wUAAQAbABAAAAD2/wYAAQAbABAAAAD2/wcAAQAbABAAAAD2/wgAAQAeABEAAAD3/wUAAQAbABAAAAD3/wYAAQAbABAAAAD3/wcAAQAbABAAAAD3/wgAAQAeABEAAAD4/wUAAQAbABAAAAD4/wYAAQAbABAAAAD4/wcAAQAbABAAAAD4/wgAAQAeABEAAAD5/wUAAQAbABAAAAD5/wYAAQAbABAAAAD5/wcAAQAbABAAAAD5/wgAAQAeABEAAAD6/wUAAQAbABAAAAD6/wYAAQAbABAAAAD6/wcAAQAbABAAAAD6/wgAAQAeABEAAAD7/wUAAQAbABAAAAD7/wYAAQAbABAAAAD7/wcAAQAbABAAAAD7/wgAAQAeABEAAAD8/wUAAQAbABAAAAD8/wYAAQAbABAAAAD8/wcAAQAbABAAAAD8/wgAAQAeABEAAAD9/wUAAQAbABAAAAD9/wYAAQAbABAAAAD9/wcAAQAbABAAAAD9/wgAAQAeABEAAAD+/wUAAQAbABAAAAD+/wYAAQAbABAAAAD+/wcAAQAbABAAAAD+/wgAAQAeABEAAAD//wUAAQAbABAAAAD//wYAAQAbABAAAAD//wcAAQAbABAAAAD//wgAAQAeABEAAAAAAAUAAQAbABAAAAAAAAYAAQAbABAAAAAAAAcAAQAbABAAAAAAAAgAAQAeABEAAAABAAUAAQAbABAAAAABAAYAAQAbABAAAAABAAcAAQAbABAAAAABAAgAAQAeABEAAAACAAUAAQAbABAAAAACAAYAAQAbABAAAAACAAcAAQAbABAAAAACAAgAAQAeABEAAAADAAUAAQAbABAAAAADAAYAAQAbABAAAAADAAcAAQAbABAAAAADAAgAAQAeABEAAAAEAAUAAQAbABAAAAAEAAYAAQAbABAAAAAEAAcAAQAbABAAAAAEAAgAAQAeABEAAAAFAAUAAQAbABAAAAAFAAYAAQAbABAAAAAFAAcAAQAbABAAAAAFAAgAAQAeABEAAAAGAAUAAQAbABAAAAAGAAYAAQAbABAAAAAGAAcAAQAbABAAAAAGAAgAAQAeABEAAAAHAAUAAQAbABAAAAAHAAYAAQAbABAAAAAHAAcAAQAbABAAAAAHAAgAAQAeABEAAAAIAAUAAQAbABAAAAAIAAYAAQAbABAAAAAIAAcAAQAbABAAAAAIAAgAAQAeABEAAAAJAAUAAQAbABAAAAAJAAYAAQAbABAAAAAJAAcAAQAbABAAAAAJAAgAAQAeABEAAAAKAAUAAQAbABAAAAAKAAYAAQAbABAAAAAKAAcAAQAbABAAAAAKAAgAAQAeABEAAAALAAUAAQAbABAAAAALAAYAAQAbABAAAAALAAcAAQAbABAAAAALAAgAAQAeABEAAAAMAAUAAQAbABAAAAAMAAYAAQAbABAAAAAMAAcAAQAbABAAAAAMAAgAAQAeABEAAAANAAUAAQAbABAAAAANAAYAAQAbABAAAAANAAcAAQAbABAAAAANAAgAAQAeABEAAAAOAAUAAQAbABAAAAAOAAYAAQAbABAAAAAOAAcAAQAbABAAAAAOAAgAAQAeABEAAAAPAAUAAQAbABAAAAAPAAYAAQAbABAAAAAPAAcAAQAbABAAAAAPAAgAAQAeABEAAAA=")
+tile_set = ExtResource("4_oivf4")
+
+[node name="TolietHolder" type="Path2D" parent="."]
+position = Vector2(-65.5, 184)
+curve = SubResource("Curve2D_wxa0m")
+script = ExtResource("32_e14us")
+
+[node name="Toliet" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(-537.503, 4.75964)
+rotation = -0.00384594
+progress = 62.5
+
+[node name="Seperator" parent="TolietHolder" instance=ExtResource("3_j7yda")]
+position = Vector2(-475.003, 4.51927)
+rotation = -0.00384594
+progress = 125.0
+
+[node name="Toliet2" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(-412.503, 4.27889)
+rotation = -0.00384594
+progress = 187.5
+index = 1
+
+[node name="Seperator2" parent="TolietHolder" instance=ExtResource("3_j7yda")]
+position = Vector2(-350.003, 4.03852)
+rotation = -0.00384594
+progress = 250.0
+
+[node name="Toliet3" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(-287.503, 3.79815)
+rotation = -0.00384594
+progress = 312.5
+index = 2
+
+[node name="Seperator3" parent="TolietHolder" instance=ExtResource("3_j7yda")]
+position = Vector2(-225.004, 3.55778)
+rotation = -0.00384594
+progress = 375.0
+
+[node name="Toliet4" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(-162.504, 3.31741)
+rotation = -0.00384594
+progress = 437.5
+index = 3
+
+[node name="Seperator4" parent="TolietHolder" instance=ExtResource("3_j7yda")]
+position = Vector2(-100.004, 3.07703)
+rotation = -0.00384594
+progress = 500.0
+
+[node name="Toliet5" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(-37.5041, 2.83666)
+rotation = -0.00384594
+progress = 562.5
+index = 4
+
+[node name="Seperator5" parent="TolietHolder" instance=ExtResource("3_j7yda")]
+position = Vector2(24.9955, 2.59629)
+rotation = -0.00384594
+progress = 625.0
+
+[node name="Toliet6" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(87.4952, 2.35592)
+rotation = -0.00384594
+progress = 687.5
+index = 5
+
+[node name="Seperator6" parent="TolietHolder" instance=ExtResource("3_j7yda")]
+position = Vector2(149.995, 2.11555)
+rotation = -0.00384594
+progress = 750.0
+
+[node name="Toliet7" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(212.495, 1.87518)
+rotation = -0.00384594
+progress = 812.5
+index = 6
+
+[node name="Seperator7" parent="TolietHolder" instance=ExtResource("3_j7yda")]
+position = Vector2(274.995, 1.6348)
+rotation = -0.00384594
+progress = 875.0
+
+[node name="Toliet8" parent="TolietHolder" instance=ExtResource("3_yla3h")]
+position = Vector2(337.494, 1.39443)
+rotation = -0.00384594
+progress = 937.5
+index = 7
+
+[node name="CharacterSpawner" type="Node2D" parent="."]
+position = Vector2(-880, 252)
+script = ExtResource("34_e14us")
+
+[node name="Door2Location" type="Marker2D" parent="CharacterSpawner"]
+position = Vector2(1064, 0)
+script = ExtResource("35_prei6")
+
+[node name="DoorSoundEffect" type="AudioStreamPlayer" parent="CharacterSpawner"]
+stream = ExtResource("37_rbg2f")
+
+[node name="GruntSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_6ub7n")
+bus = &"Audio"
+
+[node name="GoodSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_v3iuf")
+bus = &"Audio"
+
+[node name="WaterDripSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_hhq5r")
+bus = &"Audio"
+
+[node name="PopUpLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("42_v3iuf")
+
+[node name="CenterContainer" type="CenterContainer" parent="PopUpLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.5
+offset_top = -115.0
+offset_right = 235.5
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_6ub7n")
+
+[node name="PanelContainer" type="PanelContainer" parent="PopUpLayer/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("11_4cps6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpLayer/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Rule Violation" type="Label" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Rule Violation."
+label_settings = ExtResource("31_ludt0")
+
+[node name="Space" type="Label" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = ExtResource("31_ludt0")
+
+[node name="Rule Violation Reason" type="Label" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Rule Violation Reason"
+label_settings = ExtResource("31_ludt0")
+
+[node name="HSeparator" type="HSeparator" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("6_6ub7n")
+text = "Next Level"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="fade_in_complete" from="TransitionLayer" to="." method="_on_transition_layer_fade_in_complete"]
+[connection signal="fade_out_started" from="TransitionLayer" to="." method="_on_transition_layer_fade_out_started"]
+[connection signal="pressed" from="HUD Layer/TopBarTop/TopBar/HBoxContainer/SettingsButton" to="HUD Layer/SettingsPanel" method="_on_settings_button_pressed"]
+[connection signal="toggled" from="HUD Layer/TopBarTop/TopBar/HBoxContainer/BookButton" to="HUD Layer/RulePanel" method="_on_book_button_toggled"]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer/CenterContainer/MarginContainer/TextureButton" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [0]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer2/CenterContainer/MarginContainer/TextureButton2" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [1]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer3/CenterContainer/MarginContainer/TextureButton3" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [2]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer4/CenterContainer/MarginContainer/TextureButton4" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [3]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer5/CenterContainer/MarginContainer/TextureButton5" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [4]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer6/CenterContainer/MarginContainer/TextureButton6" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [5]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer7/CenterContainer/MarginContainer/TextureButton7" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [6]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer8/CenterContainer/MarginContainer/TextureButton8" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [7]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer9/CenterContainer/MarginContainer/TextureButton9" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [8]]
+[connection signal="pressed" from="HUD Layer/RulePanel/RuleList/HFlowContainer/ButtonContainer10/CenterContainer/MarginContainer/TextureButton10" to="HUD Layer/RulePanel" method="_on_texture_button_pressed" binds= [9]]
+[connection signal="selected" from="TolietHolder/Toliet" to="." method="on_urinal_callback"]
+[connection signal="selected" from="TolietHolder/Toliet2" to="." method="on_urinal_callback"]
+[connection signal="selected" from="TolietHolder/Toliet3" to="." method="on_urinal_callback"]
+[connection signal="selected" from="TolietHolder/Toliet4" to="." method="on_urinal_callback"]
+[connection signal="selected" from="TolietHolder/Toliet5" to="." method="on_urinal_callback"]
+[connection signal="selected" from="TolietHolder/Toliet6" to="." method="on_urinal_callback"]
+[connection signal="selected" from="TolietHolder/Toliet7" to="." method="on_urinal_callback"]
+[connection signal="selected" from="TolietHolder/Toliet8" to="." method="on_urinal_callback"]
+[connection signal="finished_spawning" from="CharacterSpawner" to="." method="_on_character_spawner_finished_spawning"]
+[connection signal="popup_closed" from="PopUpLayer" to="." method="_on_pop_up_layer_popup_closed"]
+[connection signal="pressed" from="PopUpLayer/CenterContainer/PanelContainer/VBoxContainer/MarginContainer2/Button" to="PopUpLayer" method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://82ptej7xfg8x"]
+
+[ext_resource type="Script" uid="uid://dopk7ct2gr8k2" path="res://settings_panels.gd" id="1_a03w7"]
+[ext_resource type="Theme" uid="uid://bexg0f6lf0tf3" path="res://gui/main_theme.tres" id="1_nxf8l"]
+[ext_resource type="Theme" uid="uid://cmvi5035lijxk" path="res://gui/Game_Gui.tres" id="2_nxf8l"]
+[ext_resource type="Script" uid="uid://cyc7u5i88da1q" path="res://scripts/simple_label_callback.gd" id="4_jq26l"]
+[ext_resource type="LabelSettings" uid="uid://4e85a5adadv" path="res://gui/rule_entry_title.tres" id="4_nxf8l"]
+
+[sub_resource type="Theme" id="Theme_wmnq4"]
+
+[node name="Settings" type="CenterContainer"]
+offset_right = 553.0
+offset_bottom = 442.0
+theme = ExtResource("1_nxf8l")
+script = ExtResource("1_a03w7")
+
+[node name="SettingsPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="InnerSettings" type="MarginContainer" parent="SettingsPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/InnerSettings"]
+layout_mode = 2
+theme = ExtResource("2_nxf8l")
+
+[node name="Header" type="HBoxContainer" parent="SettingsPanel/InnerSettings/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_wmnq4")
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingsPanel/InnerSettings/VBoxContainer/Header"]
+layout_mode = 2
+theme = ExtResource("2_nxf8l")
+text = "Settings"
+label_settings = ExtResource("4_nxf8l")
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/InnerSettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="SettingsPanel/InnerSettings/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="MusicLabel" type="Label" parent="SettingsPanel/InnerSettings/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Music"
+label_settings = ExtResource("4_nxf8l")
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel/InnerSettings/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="MusicAmount" type="Label" parent="SettingsPanel/InnerSettings/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "123"
+label_settings = ExtResource("4_nxf8l")
+script = ExtResource("4_jq26l")
+
+[node name="SoundLabel" type="Label" parent="SettingsPanel/InnerSettings/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "SFX"
+label_settings = ExtResource("4_nxf8l")
+
+[node name="SoundSlider" type="HSlider" parent="SettingsPanel/InnerSettings/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="SoundAmount" type="Label" parent="SettingsPanel/InnerSettings/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "123"
+label_settings = ExtResource("4_nxf8l")
+script = ExtResource("4_jq26l")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsPanel/InnerSettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="SkipAnimLabel" type="Label" parent="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Skip Animations"
+label_settings = ExtResource("4_nxf8l")
+
+[node name="SkipAnimCheck" type="CheckButton" parent="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="SettingsPanel/InnerSettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreenLabel" type="Label" parent="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Full Screen"
+label_settings = ExtResource("4_nxf8l")
+
+[node name="FullScreenCheck" type="CheckButton" parent="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="SettingsPanel/InnerSettings/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Close"
+
+[node name="SaveButton" type="Button" parent="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Save"
+
+[connection signal="value_changed" from="SettingsPanel/InnerSettings/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/InnerSettings/VBoxContainer/GridContainer/MusicSlider" to="SettingsPanel/InnerSettings/VBoxContainer/GridContainer/MusicAmount" method="_on_slider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/InnerSettings/VBoxContainer/GridContainer/SoundSlider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/InnerSettings/VBoxContainer/GridContainer/SoundSlider" to="SettingsPanel/InnerSettings/VBoxContainer/GridContainer/SoundAmount" method="_on_slider_value_changed"]
+[connection signal="toggled" from="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer3/SkipAnimCheck" to="." method="_on_skip_anim_check_toggled"]
+[connection signal="toggled" from="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer5/FullScreenCheck" to="." method="_on_full_screen_check_toggled"]
+[connection signal="pressed" from="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer4/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/InnerSettings/VBoxContainer/HBoxContainer4/SaveButton" to="." method="_on_save_button_pressed"]

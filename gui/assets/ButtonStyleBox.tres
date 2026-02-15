@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dkit8sbwjl2b7"]
+
+[ext_resource type="Texture2D" uid="uid://cyyn87tp8i81u" path="res://gui/assets/atlais/ButtonBackground.tres" id="1_31yhk"]
+
+[resource]
+texture = ExtResource("1_31yhk")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.903598, 0.903598, 0.903598, 1)

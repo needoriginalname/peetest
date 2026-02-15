@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bexg0f6lf0tf3"]
+
+[ext_resource type="Texture2D" uid="uid://rjftuv3h66q6" path="res://gui/assets/atlais/Grabber.tres" id="1_4l6wq"]
+[ext_resource type="StyleBox" uid="uid://dlomb52llonmr" path="res://gui/assets/ButtonStyleBoxHover.tres" id="1_8g5du"]
+[ext_resource type="FontFile" uid="uid://bab5rve05pjuj" path="res://font/Fredoka-VariableFont_wdth,wght.ttf" id="1_d5i1k"]
+[ext_resource type="StyleBox" uid="uid://dkit8sbwjl2b7" path="res://gui/assets/ButtonStyleBox.tres" id="1_lecey"]
+[ext_resource type="StyleBox" uid="uid://c8sg371bhypvp" path="res://gui/assets/PanelStyleBox.tres" id="1_ntn21"]
+[ext_resource type="Texture2D" uid="uid://d4jx877gt72gj" path="res://gui/assets/atlais/BackSliderNormal.tres" id="2_3222h"]
+[ext_resource type="Texture2D" uid="uid://2viytuavnvpl" path="res://gui/assets/atlais/toggleon.tres" id="2_oq5vb"]
+[ext_resource type="Texture2D" uid="uid://ctt3qw26b3smr" path="res://gui/assets/atlais/BackSliderBright.tres" id="3_0g4ev"]
+[ext_resource type="Texture2D" uid="uid://el0g5lg2xlnf" path="res://gui/assets/atlais/toggleoff.tres" id="3_8g5du"]
+[ext_resource type="StyleBox" uid="uid://hcgahbqrnq7l" path="res://gui/assets/ButtonStyleBoxPressed.tres" id="3_d5i1k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oq5vb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4l6wq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gicc"]
+texture = ExtResource("2_3222h")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lecey"]
+texture = ExtResource("3_0g4ev")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_d5i1k")
+Button/styles/focus = ExtResource("1_8g5du")
+Button/styles/hover = ExtResource("1_8g5du")
+Button/styles/normal = ExtResource("1_lecey")
+Button/styles/pressed = ExtResource("3_d5i1k")
+CheckButton/icons/checked = ExtResource("2_oq5vb")
+CheckButton/icons/unchecked = ExtResource("3_8g5du")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_oq5vb")
+HSlider/icons/grabber = ExtResource("1_4l6wq")
+HSlider/icons/grabber_disabled = SubResource("PlaceholderTexture2D_4l6wq")
+HSlider/icons/grabber_highlight = ExtResource("1_4l6wq")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_0gicc")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_lecey")
+Panel/styles/panel = ExtResource("1_ntn21")
+PanelContainer/styles/panel = ExtResource("1_ntn21")

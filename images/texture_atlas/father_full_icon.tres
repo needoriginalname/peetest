@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://blk00nfel1vwp"]
+
+[ext_resource type="Texture2D" uid="uid://cov6x4n8j4vvt" path="res://images/LPC Characters/father_universal.png" id="1_qcdn5"]
+
+[resource]
+atlas = ExtResource("1_qcdn5")
+region = Rect2(16, 8, 32, 56)

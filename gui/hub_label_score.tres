@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ca8lbuxfwwvkf"]
+
+[ext_resource type="FontFile" uid="uid://cqf2am3437tga" path="res://font/Nunito-Bold.ttf" id="1_ogiwb"]
+
+[resource]
+font = ExtResource("1_ogiwb")
+font_size = 52
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)

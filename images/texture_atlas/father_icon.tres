@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bims0i2f06msp"]
+
+[ext_resource type="Texture2D" uid="uid://cov6x4n8j4vvt" path="res://images/LPC Characters/father_universal.png" id="1_8orav"]
+
+[resource]
+atlas = ExtResource("1_8orav")
+region = Rect2(16, 12, 32, 32)

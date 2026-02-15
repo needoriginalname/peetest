@@ -1,0 +1,51 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ducdboyrilhwe"]
+
+[ext_resource type="Texture2D" uid="uid://dewlpdyelbh8r" path="res://images/wall/Room_Builder_Walls_48x48.png" id="1_1wtcr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1wtcr"]
+texture = ExtResource("1_1wtcr")
+texture_region_size = Vector2i(48, 48)
+22:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+25:14/0 = 0
+26:14/0 = 0
+27:14/0 = 0
+27:15/0 = 0
+28:15/0 = 0
+29:15/0 = 0
+29:16/0 = 0
+28:14/0 = 0
+29:14/0 = 0
+30:14/0 = 0
+31:14/0 = 0
+31:15/0 = 0
+30:15/0 = 0
+30:16/0 = 0
+31:16/0 = 0
+31:17/0 = 0
+30:17/0 = 0
+29:17/0 = 0
+28:17/0 = 0
+27:17/0 = 0
+26:17/0 = 0
+25:17/0 = 0
+24:17/0 = 0
+23:17/0 = 0
+22:17/0 = 0
+22:16/0 = 0
+22:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+25:15/0 = 0
+26:15/0 = 0
+28:16/0 = 0
+27:16/0 = 0
+26:16/0 = 0
+25:16/0 = 0
+24:16/0 = 0
+23:16/0 = 0
+
+[resource]
+tile_size = Vector2i(48, 48)
+sources/1 = SubResource("TileSetAtlasSource_1wtcr")
