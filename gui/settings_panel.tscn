@@ -10,7 +10,7 @@
 
 [node name="Settings" type="CenterContainer"]
 offset_right = 553.0
-offset_bottom = 442.0
+offset_bottom = 464.0
 theme = ExtResource("1_nxf8l")
 script = ExtResource("1_a03w7")
 

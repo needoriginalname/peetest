@@ -6,6 +6,8 @@ class_name SettingsPanel
 @onready var skip_animation_check = %SkipAnimCheck
 @onready var full_screen_check = %FullScreenCheck
 
+signal window_closed
+
 func _ready() -> void:
 	visible = false
 	load_settings()
@@ -54,6 +56,7 @@ func _on_close_button_pressed() -> void:
 	save_manager.load_save()
 	save_manager.apply_settings()
 	visible = false
+	window_closed.emit()
 
 
 func _on_save_button_pressed() -> void:

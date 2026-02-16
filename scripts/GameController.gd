@@ -1,6 +1,6 @@
 class_name GameController extends Node2D
 
-@export_range(4, 12, 1) var n_urinals := 12
+@export_range(4, 8, 1) var n_urinals := 8
 @export var SCREEN_WIDTH = 1536
 @export var BASE_URINAL_WIDTH = 256.0  # base width for urinal sprite
 @export var SPACING = 10.0   # desired spacing in pixels
@@ -23,7 +23,7 @@ var puzzle:UrinalPuzzleGenV3 = load("res://scripts/helpers/urinal_puzzle_gen_v3.
 
 var touch_is_enabled = false
 var rng := RandomNumberGenerator.new()
-var puzzledb: PuzzleDB = load("res://scripts/helpers/puzzle_db.gd").new()
+var puzzledb: PuzzleDB = load("res://scripts/helpers/puzzledb.gd").new()
 var current_puzzle: PuzzleConfig
 const starting_y := 120
 var characters_to_enter: Array = []
@@ -60,7 +60,7 @@ func _ready() -> void:
 	pc.dividers = selected.get("dividers", [])
 	pc.solution_index = int(selected.get("solution_index", 0))
 	pc.seed = int(selected.get("seed", 0))
-	pc.npcs = []
+	pc.npcs = [] as Array[NPCData]
 	for n in selected.get("npcs", []):
 		# create an NPCData instance (use global NPCData class) so evaluate_choice receives expected types
 		var npc = NPCData.new()

@@ -37,7 +37,7 @@ func spawn_next():
 			pchar.add_to_group("characters")
 			# If the puzzle door is on the right, place spawn at Door2Location before character config is applied
 			if spawn_door_side == "right" and door2_location:
-				pchar.global_position = door2_location.global_position
+				pchar.position = door2_location.position
 			# Provide the target to the character (toliet marker) as before
 			pchar.set_character_config(c, toliet_locations[c.index], c.index)
 			pchar.connect("animation_complete", spawn_next, ConnectFlags.CONNECT_ONE_SHOT)
