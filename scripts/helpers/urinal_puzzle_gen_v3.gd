@@ -29,18 +29,21 @@ class_name UrinalPuzzleGenV3
 ##   "num_urinals_max": int = 9,
 ##   "door_side": "left"|"right"|null = null (random),
 ##   "max_broken": int = 2,
-##   "want_regular_count": int = 1,       # minimum regulars to try to include
+##   "min_regular_count": int = 0,             # minimum regulars to try to include
+##   "max_regular_count": int = 2,             # maximum regulars to try to include
+##   "max_percent_of_regulars": int = 25,      # maximum percent of regulars allowed
 ##   "allow_high_class": bool = true,
 ##   "allow_pirate": bool = true,
 ##   "allow_germaphobe": bool = true,
 ##   "allow_femboy": bool = true,
 ##   "allow_old_man": bool = true,
 ##   "allow_bro": bool = true,
-##   "allow_dad_kid": bool = true,        # at most one pair is attempted if not forced
-##   "empty_min": int|nil,                # min empties allowed (inclusive)
-##   "empty_max": int|nil,                # max empties allowed (inclusive)
-##   "empty_count": int|nil,              # (legacy) exact empties, still supported
-##   "force": Array|nil,                  # NEW: list of forced placements (see header)
+##   "allow_dad_kid": bool = true,             # at most one pair is attempted if not forced
+##   "empty_min": int|nil = 2,                 # min empties allowed (inclusive)
+##   "empty_max": int|nil = 4,                 # max empties allowed (inclusive)
+##   "empty_percent": int|nil = 60,            # max percent of empties allowed
+##   "force": Array|nil,                       # list of forced placements,
+##   "chance_to_allow_corners": int|nil = 10,  # chance to allow corner placements (0-100)
 ##   "force_unique": bool = true,
 ##   "max_attempts": int = 1000,
 ##   "seed": int|nil

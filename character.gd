@@ -4,7 +4,7 @@ class_name Character extends Node2D
 @onready var player: AnimationPlayer = $AnimationPlayer
 @export var frames: SpriteFrames
 @export var destination_point: Marker2D
-@export var move_speed: float = 250 # pixels per second
+@export var move_speed: float = 500 # pixels per second
 @export var should_flip_when_up := false
 @export var toliet_index: int
 var npc_type
@@ -20,7 +20,6 @@ func run_disapproval(array: Array[int]):
 			player.play("play_anger")
 			
 func set_character_config(npc_data: NPCData, point, toliet_index):
-	toliet_index = toliet_index
 	var sprite_frame_resouce := Enums.REGULAR_SPRITE_RESOURCE
 	
 	match npc_data.type:
@@ -29,7 +28,7 @@ func set_character_config(npc_data: NPCData, point, toliet_index):
 		Enums.NPCType.FEMBOY:
 			sprite_frame_resouce = Enums.FEMBOY_SPRITE_RESOURCE
 		Enums.NPCType.OLD_MAN:
-			sprite_frame_resouce = Enums.OLD_MAD_SPRITE_RESOURCE
+			sprite_frame_resouce = Enums.OLD_MAN_SPRITE_RESOURCE
 		Enums.NPCType.BRO:
 			sprite_frame_resouce = Enums.BRO_SPRITE_RESOURCE
 		Enums.NPCType.GERMAPHOBE:

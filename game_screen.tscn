@@ -113,7 +113,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="HUD Layer" type="CanvasLayer" parent="."]
 layer = 10
-visible = false
 
 [node name="TopBarTop" type="VBoxContainer" parent="HUD Layer"]
 unique_name_in_owner = true

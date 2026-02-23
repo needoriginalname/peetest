@@ -19,7 +19,7 @@ class_name GameController extends Node2D
 @onready var timer := $Timer
 @export var starting_time_for_timeout := 6000
 @onready var timeout = starting_time_for_timeout
-var puzzle:UrinalPuzzleGenV3 = load("res://scripts/helpers/urinal_puzzle_gen_v3.gd").new()
+var puzzle:UrinalPuzzleGenerator = load("res://scripts/helpers/puzzle_gen_v41.gd").new()
 
 var touch_is_enabled = false
 var rng := RandomNumberGenerator.new()
@@ -43,9 +43,9 @@ func _ready() -> void:
 	rng.randomize()
 	var puzzles_for_count: Array = []
 	if puzzledb and PuzzleDB and PuzzleDB.puzzles:
-		puzzles_for_count = PuzzleDB.puzzles.get(str(num_urinals), [])
+		puzzles_for_count = PuzzleDB.puzzles.puzzles_by_urinals.get(str(num_urinals), [])
 	else:
-		puzzles_for_count = puzzledb.puzzles.get(str(num_urinals), [])
+		puzzles_for_count = puzzledb.puzzles.puzzles_by_urinals.get(str(num_urinals), [])
 
 	if puzzles_for_count.size() == 0:
 		push_error("No puzzles found for %d urinals; ensure PuzzleDB contains entries for this count." % num_urinals)
