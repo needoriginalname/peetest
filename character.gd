@@ -19,7 +19,7 @@ func run_disapproval(array: Array[int]):
 		else:
 			player.play("play_anger")
 			
-func set_character_config(npc_data: NPCData, point, toliet_index):
+func set_character_config(npc_data: Dictionary, point, toliet_index):
 	var sprite_frame_resouce := Enums.REGULAR_SPRITE_RESOURCE
 	
 	match npc_data.type:
@@ -35,7 +35,7 @@ func set_character_config(npc_data: NPCData, point, toliet_index):
 			sprite_frame_resouce = Enums.GERMAPHOBE_SPRITE_RESOURCE
 		Enums.NPCType.COSPLAYER:
 			sprite_frame_resouce = Enums.COSPLAYER_SPRITE_RESOURCE
-			should_flip_when_up = npc_data.meta["peg"] == "R"
+			should_flip_when_up = npc_data.meta["pegleg_side"] == "right"
 		Enums.NPCType.REGULAR:
 			sprite_frame_resouce = Enums.REGULAR_SPRITE_RESOURCE
 		Enums.NPCType.FEMBOY:

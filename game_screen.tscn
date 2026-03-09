@@ -92,8 +92,14 @@ point_count = 2
 
 [node name="GameController" type="Node2D"]
 script = ExtResource("1_norob")
+n_urinals = null
+SCREEN_WIDTH = null
+BASE_URINAL_WIDTH = null
+SPACING = null
 urinal_prefab = ExtResource("3_yla3h")
 seperator_prefab = ExtResource("3_j7yda")
+starting_x = null
+starting_time_for_timeout = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.75, 0.75)

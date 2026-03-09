@@ -19,12 +19,12 @@ class_name GameController extends Node2D
 @onready var timer := $Timer
 @export var starting_time_for_timeout := 6000
 @onready var timeout = starting_time_for_timeout
-var puzzle:UrinalPuzzleGenerator = load("res://scripts/helpers/puzzle_gen_v41.gd").new()
+var puzzle:UrinalPuzzleGenerator = load("res://scripts/helpers/urinal_puzzle_gen_v4.gd").new()
 
 var touch_is_enabled = false
 var rng := RandomNumberGenerator.new()
 var puzzledb: PuzzleDB = load("res://scripts/helpers/puzzledb.gd").new()
-var current_puzzle: PuzzleConfig
+var current_puzzle: Dictionary
 const starting_y := 120
 var characters_to_enter: Array = []
 
@@ -43,36 +43,18 @@ func _ready() -> void:
 	rng.randomize()
 	var puzzles_for_count: Array = []
 	if puzzledb and PuzzleDB and PuzzleDB.puzzles:
-		puzzles_for_count = PuzzleDB.puzzles.puzzles_by_urinals.get(str(num_urinals), [])
+		puzzles_for_count = PuzzleDB.puzzles.data.get(str(num_urinals), []).puzzles
 	else:
-		puzzles_for_count = puzzledb.puzzles.puzzles_by_urinals.get(str(num_urinals), [])
+		puzzles_for_count = puzzledb.puzzles.data.get(str(num_urinals), []).puzzles
 
 	if puzzles_for_count.size() == 0:
 		push_error("No puzzles found for %d urinals; ensure PuzzleDB contains entries for this count." % num_urinals)
 		return
 
 	var selected = puzzles_for_count[rng.randi() % puzzles_for_count.size()]
-	# Build a PuzzleConfig from the selected DB entry
-	var pc = PuzzleConfig.new()
-	pc.num_urinal = int(selected.get("num_urinals", num_urinals))
-	pc.door_side = selected.get("door_side", "left")
-	pc.broken = selected.get("broken", [])
-	pc.dividers = selected.get("dividers", [])
-	pc.solution_index = int(selected.get("solution_index", 0))
-	pc.seed = int(selected.get("seed", 0))
-	pc.npcs = [] as Array[NPCData]
-	for n in selected.get("npcs", []):
-		# create an NPCData instance (use global NPCData class) so evaluate_choice receives expected types
-		var npc = NPCData.new()
-		npc.index = int(n.get("index", 0))
-		npc.meta = n.get("meta", {})
-		var t = n.get("type")
-		# keep the raw type (string or int) to avoid compile-time enum references
-		npc.type = t
-		pc.npcs.append(npc)
 
-	current_puzzle = pc
-	set_urinal_config(current_puzzle)
+	current_puzzle = selected
+	set_urinal_config(selected)
 	start_character_spawning()
 	
 	
@@ -111,10 +93,10 @@ func on_urinal_callback(index: int):
 			do_correct_solution_animation()
 			print("Correct selection")
 		else:
-			var v: Array = result.violations if result else []
-			var v2: Array = v.map(func(n): return n.who_index)
+			var v: Dictionary = result.violations if result else {}
+			#var v2: int = v.who_index
 			###   "violations": Array[Dictionary]  # { rule:int, who_index:int, who_type:int, description:String }
-			get_tree().call_group("chararcters", "run_disapproval", v2)
+			#get_tree().call_group("chararcters", "run_disapproval", v2)
 			do_incorrect_solution_animation(v)
 			print("Incorrect selection")
 	else:
@@ -124,19 +106,19 @@ func do_correct_solution_animation():
 	save_manager.update_score()
 	start_loading_next_level()
 
-func do_incorrect_solution_animation(violations: Array):
+func do_incorrect_solution_animation(violations: Dictionary):
 	save_manager.update_score(0)
 	
-	var v = violations.pick_random() if violations.size() > 0 else null
-	var message = "Rule %d violation" % v.rule if v else "Rule violation"
-	var message2 = v.description if v else ""
-	pop_up_controller.open_popup(message, message2)
+	#var v = violations.pick_random() if violations.size() > 0 else null
+	#var message = "Rule %d violation" % v.rule if v else "Rule violation"
+	#var message2 = v.description if v else ""
+	pop_up_controller.open_popup("test1", "test2s")
 	
 func start_loading_next_level():
 	touch_is_enabled = false
 	transition_layer.fade_out()
 		
-func set_urinal_config(puzzle_config: PuzzleConfig):
+func set_urinal_config(puzzle_config: Dictionary):
 	
 	var temp_storage = null
 
@@ -155,8 +137,8 @@ func set_urinal_config(puzzle_config: PuzzleConfig):
 		divider_nodes[i].visible = r
 	
 	for i in range(len(toliet_nodes)):
-		toliet_nodes[i].visible = i < puzzle_config.num_urinal
-		toliet_nodes[i].set_broken_texture(puzzle_config.broken[i] if i < puzzle_config.num_urinal else false)
+		toliet_nodes[i].visible = i < puzzle_config.num_urinals
+		toliet_nodes[i].set_broken_texture(puzzle_config.broken[i] if i < puzzle_config.num_urinals else false)
 	
 	var character_to_enter: Array = []
 	
