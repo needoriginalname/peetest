@@ -40,7 +40,14 @@ func set_character_config(npc_data: NPCData, point, toliet_index):
 			sprite_frame_resouce = Enums.REGULAR_SPRITE_RESOURCE
 		Enums.NPCType.FEMBOY:
 			sprite_frame_resouce = Enums.FEMBOY_SPRITE_RESOURCE
-		
+		Enums.NPCType.HIGH_CLASS:
+			sprite_frame_resouce = Enums.HIGHCLASS_SPRITE_RESOURCE
+		Enums.NPCType.DAD:
+			sprite_frame_resouce = Enums.DAD_SPRITE_RESOURCE
+		Enums.NPCType.KID:
+			sprite_frame_resouce = Enums.KID_SPRITE_RESOURCE
+
+			
 	var sprite_frames: SpriteFrames = sprite_frame_resouce
 	destination_point = point
 	set_sprite_frame(sprite_frames)
